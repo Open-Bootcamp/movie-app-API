@@ -24,4 +24,7 @@ Route.get('/', async () => {
   return { hello: 'world' }
 })
 
-Route.resource('movies', 'MoviesController')
+Route.group(() => {
+  Route.resource('', 'MoviesController').apiOnly()
+  Route.get('/withdescription', 'MoviesController.withdescription')
+}).prefix('/api/movies')
