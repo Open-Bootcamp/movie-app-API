@@ -1,7 +1,12 @@
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.get('/', 'MoviesController.index')
-
-Route.get('/movie', 'MoviesController.index')
-
-Route.post('/movie', 'MoviesController.store')
+Route.group(() => {
+  Route.group(() => {
+    Route.get('/', 'ContentsController.index')
+    Route.get('/content', 'ContentsController.index')
+    Route.post('/content', 'ContentsController.store')
+    Route.patch('/content/:id', 'ContentsController.update')
+    Route.delete('/content/:id', 'ContentsController.destroy')
+  }).middleware('auth')
+  Route.post('/register', 'RegistersController.index')
+}).prefix('api')

@@ -1,7 +1,11 @@
 import { DateTime } from 'luxon'
 import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
+import {
+  responsiveAttachment,
+  ResponsiveAttachmentContract,
+} from '@ioc:Adonis/Addons/ResponsiveAttachment'
 
-export default class Movie extends BaseModel {
+export default class Content extends BaseModel {
   @column({ isPrimary: true })
   public id: number
 
@@ -21,13 +25,13 @@ export default class Movie extends BaseModel {
   public rating: number
 
   @column()
-  public isRecent: boolean
+  public is_recent: boolean
 
   @column()
-  public isTrending: boolean
+  public is_trending: boolean
 
-  @column()
-  public image_url: string
+  @responsiveAttachment({ preComputeUrls: true })
+  public image_file: ResponsiveAttachmentContract | null
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime

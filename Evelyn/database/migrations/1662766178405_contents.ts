@@ -1,7 +1,7 @@
 import BaseSchema from '@ioc:Adonis/Lucid/Schema'
 
 export default class extends BaseSchema {
-  protected tableName = 'movies'
+  protected tableName = 'contents'
 
   public async up() {
     this.schema.createTable(this.tableName, (table) => {
@@ -13,7 +13,7 @@ export default class extends BaseSchema {
       table.float('rating')
       table.boolean('is_recent')
       table.boolean('is_trending')
-      table.string('image_url')
+      table.json('image_file')
       table.timestamp('created_at', { useTz: true })
       table.timestamp('updated_at', { useTz: true })
     })
