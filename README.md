@@ -17,7 +17,7 @@
 
 ### Screenshot
 
-![](./public/preview.PNG)
+![](public/preview.png)
 
 ## Proyecto
 
