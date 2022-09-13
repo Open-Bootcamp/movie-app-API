@@ -33,7 +33,7 @@ Este proyecto fue realizado con la participación de los integrantes de OpenBoot
 ### Construido con:
 
 - AdonisJs
-- Posgresql
+- Postgresql
 
 ### Recursos Utilizados
 
